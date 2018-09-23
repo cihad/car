@@ -7,9 +7,12 @@
 
 <p>
   <strong>Logo:</strong>
-  <%= image_tag url_for(@brand.logo), width: 200 %>
+  <% if @brand.logo.attachment %>
+    <%= image_tag url_for(@brand.logo), width: 200 %>
+  <% end %>
 </p>
 
 
 <%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+<%= link_to 'Back', brands_path %> |
+<%= link_to 'Models', brand_models_path(@brand) %>

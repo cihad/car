@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: one
+  name: MyString
+  fuel_type: MyString
+  engine_size: 1
+  power: 1
+  power_unit: MyString
+  torque: 1
+  transmission: MyString
+  acceleration: MyString
+  urban_consumption: 1.5
+  extra_urban_consumption: 1.5
+  combined_consumption: 1.5
+  top_speed: 1
+
+two:
+  brand: two
+  name: MyString
+  fuel_type: MyString
+  engine_size: 1
+  power: 1
+  power_unit: MyString
+  torque: 1
+  transmission: MyString
+  acceleration: MyString
+  urban_consumption: 1.5
+  extra_urban_consumption: 1.5
+  combined_consumption: 1.5
+  top_speed: 1

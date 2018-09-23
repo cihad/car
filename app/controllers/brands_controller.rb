@@ -64,7 +64,7 @@ class BrandsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_brand
-      @brand = Brand.find(params[:id])
+      @brand = Brand.find_by!("lower(name) = ?", params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

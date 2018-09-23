@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @model.brand %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @model.name %>
+</p>
+
+<p>
+  <strong>Fuel type:</strong>
+  <%= @model.fuel_type %>
+</p>
+
+<p>
+  <strong>Engine size:</strong>
+  <%= @model.engine_size %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @model.power %>
+</p>
+
+<p>
+  <strong>Power unit:</strong>
+  <%= @model.power_unit %>
+</p>
+
+<p>
+  <strong>Torque:</strong>
+  <%= @model.torque %>
+</p>
+
+<p>
+  <strong>Transmission:</strong>
+  <%= @model.transmission %>
+</p>
+
+<p>
+  <strong>Acceleration:</strong>
+  <%= @model.acceleration %>
+</p>
+
+<p>
+  <strong>Urban consumption:</strong>
+  <%= @model.urban_consumption %>
+</p>
+
+<p>
+  <strong>Extra urban consumption:</strong>
+  <%= @model.extra_urban_consumption %>
+</p>
+
+<p>
+  <strong>Combined consumption:</strong>
+  <%= @model.combined_consumption %>
+</p>
+
+<p>
+  <strong>Top speed:</strong>
+  <%= @model.top_speed %>
+</p>
+
+<%= link_to 'Edit', edit_brand_model_path(@brand, @model) %> |
+<%= link_to 'Back', brand_models_path(@brand) %>

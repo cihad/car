@@ -1,0 +1,77 @@
+<%= form_with(model: [@brand, model], local: true) do |form| %>
+  <% if model.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(model.errors.count, "error") %> prohibited this model from being saved:</h2>
+
+      <ul>
+      <% model.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fuel_type %>
+    <%= form.text_field :fuel_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :engine_size %>
+    <%= form.number_field :engine_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :power %>
+    <%= form.number_field :power %>
+  </div>
+
+  <div class="field">
+    <%= form.label :power_unit %>
+    <%= form.text_field :power_unit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :torque %>
+    <%= form.number_field :torque %>
+  </div>
+
+  <div class="field">
+    <%= form.label :transmission %>
+    <%= form.text_field :transmission %>
+  </div>
+
+  <div class="field">
+    <%= form.label :acceleration %>
+    <%= form.text_field :acceleration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :urban_consumption %>
+    <%= form.text_field :urban_consumption %>
+  </div>
+
+  <div class="field">
+    <%= form.label :extra_urban_consumption %>
+    <%= form.text_field :extra_urban_consumption %>
+  </div>
+
+  <div class="field">
+    <%= form.label :combined_consumption %>
+    <%= form.text_field :combined_consumption %>
+  </div>
+
+  <div class="field">
+    <%= form.label :top_speed %>
+    <%= form.number_field :top_speed %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

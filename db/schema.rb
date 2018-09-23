@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_23_161247) do
+ActiveRecord::Schema.define(version: 2018_09_23_185605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,30 @@ ActiveRecord::Schema.define(version: 2018_09_23_161247) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_brands_on_name", unique: true
   end
 
+  create_table "models", force: :cascade do |t|
+    t.bigint "brand_id"
+    t.string "name"
+    t.string "fuel_type"
+    t.integer "engine_size"
+    t.integer "power"
+    t.string "power_unit"
+    t.integer "torque"
+    t.string "transmission"
+    t.string "acceleration"
+    t.float "urban_consumption"
+    t.float "extra_urban_consumption"
+    t.float "combined_consumption"
+    t.integer "top_speed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.integer "pos"
+    t.index ["ancestry"], name: "index_models_on_ancestry"
+    t.index ["brand_id"], name: "index_models_on_brand_id"
+  end
+
+  add_foreign_key "models", "brands"
 end
