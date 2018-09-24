@@ -1,4 +1,3 @@
-require_relative 'config/application'
 require "capistrano/setup"
 require "capistrano/deploy"
 require "capistrano/scm/git"
@@ -12,6 +11,7 @@ require 'capistrano/puma/nginx'
 require "capistrano/chruby"
 require 'capistrano/rails'
 require 'capistrano/rails/db'
+require 'sshkit/sudo'
 
 install_plugin Capistrano::SCM::Git
 install_plugin Capistrano::Nginx
