@@ -1,3 +1,4 @@
+require_relative 'config/application'
 require "capistrano/setup"
 require "capistrano/deploy"
 require "capistrano/scm/git"

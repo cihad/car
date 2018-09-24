@@ -2,7 +2,7 @@ lock "~> 3.11.0"
 
 set :user, "deployer"
 set :application, "car"
-set :repo_url, "git@github.com:cihad/teklifal.git"
+set :repo_url, "git@github.com:cihad/car.git"
 set :branch, "develop"
 set :deploy_to, "/home/deployer/apps/car"
 set :pty, true
