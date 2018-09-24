@@ -12,6 +12,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "navbar" %>
+
+
+    <div class="container mt-5">
+      <%= yield :breadcrumb %>
+
+      <%= yield %>
+    </div>
+
+    <%= render "footer" %>
   </body>
 </html>

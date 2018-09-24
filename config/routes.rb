@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :models do
       post :sort, on: :collection
     end
-
   end
+  
+  resources :images, only: :destroy
 end

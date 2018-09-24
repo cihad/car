@@ -9,7 +9,6 @@ class ModelsController < ApplicationController
   # GET /models.json
   def index
     @models = @brand.models.arrange(:order => :pos)
-    binding.pry
   end
 
   # GET /models/1
@@ -77,6 +76,9 @@ class ModelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def model_params
-      params.require(:model).permit(:brand_id, :name, :fuel_type, :engine_size, :power, :power_unit, :torque, :transmission, :acceleration, :urban_consumption, :extra_urban_consumption, :combined_consumption, :top_speed)
+      params.require(:model).permit(:brand_id, :name, :fuel_type,
+        :engine_size, :power, :power_unit, :torque, :transmission,
+        :acceleration, :urban_consumption, :extra_urban_consumption,
+        :combined_consumption, :top_speed, images: [])
     end
 end

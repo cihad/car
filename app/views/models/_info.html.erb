@@ -1,0 +1,36 @@
+<% if @model.childless? %>
+  <dl class="row mt-5">
+    <dt class="col-4 text-right">Fuel type:</dt>
+    <dd class="col-8"><%= @model.fuel_type %></dd>
+
+    <dt class="col-4 text-right">Engine size:</dt>
+    <dd class="col-8"><%= @model.engine_size %></dd>
+
+    <dt class="col-4 text-right">Power:</dt>
+    <dd class="col-8"><%= @model.power %></dd>
+
+    <dt class="col-4 text-right">Power unit:</dt>
+    <dd class="col-8"><%= @model.power_unit %></dd>
+
+    <dt class="col-4 text-right">Torque:</dt>
+    <dd class="col-8"><%= @model.torque %></dd>
+
+    <dt class="col-4 text-right">Transmission:</dt>
+    <dd class="col-8"><%= @model.transmission %></dd>
+
+    <dt class="col-4 text-right">Acceleration:</dt>
+    <dd class="col-8"><%= @model.acceleration %></dd>
+
+    <dt class="col-4 text-right">Urban consumption:</dt>
+    <dd class="col-8"><%= @model.urban_consumption %></dd>
+
+    <dt class="col-4 text-right">Extra urban consumption:</dt>
+    <dd class="col-8"><%= @model.extra_urban_consumption %></dd>
+
+    <dt class="col-4 text-right">Combined consumption:</dt>
+    <dd class="col-8"><%= @model.combined_consumption %></dd>
+
+    <dt class="col-4 text-right">Top speed:</dt>
+    <dd class="col-8"><%= @model.top_speed %></dd>
+  </dl>
+<% end %>

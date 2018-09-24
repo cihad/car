@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: one
+  price: 1.5
+  currency: 
+
+two:
+  model: two
+  price: 1.5
+  currency: 

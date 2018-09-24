@@ -1,0 +1,13 @@
+<% model.brand.tap do |brand| %>
+  <tr>
+    <td>
+      <%= link_to brand.name, brand %>
+    </td>
+    <td>
+      <%= link_to model.name, [brand, model] %>
+    </td>
+    <td>
+      TRY
+    </td>
+  </tr>
+<% end %>

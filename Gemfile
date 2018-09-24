@@ -67,3 +67,4 @@ gem 'bootstrap', '~> 4.1.3'
 gem 'haml-rails'
 gem 'ancestry'
 gem 'sortable_tree_rails', github: "cihad/sortable_tree_rails", branch: "turbolinks-support"
+gem 'mini_magick', '~> 4.9'

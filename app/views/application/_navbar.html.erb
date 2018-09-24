@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="//teklifal.com">Teklifal</a>
+  <span class="navbar-brand">/</span>
+  <%= link_to "Otomotiv", root_path, class: "navbar-brand" %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Markalar", brands_path, class: "nav-link" %>
+      </li>
+    </ul>
+
+    <div class="d-inline">
+      <%= link_to "&larr; teklifal.com'a dön".html_safe, "//teklifal.com"  %>
+    </div>
+  </div>
+</nav>

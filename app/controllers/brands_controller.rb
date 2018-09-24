@@ -10,6 +10,7 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
+    @models = @brand.models.arrange(:order => :pos)
   end
 
   # GET /brands/new

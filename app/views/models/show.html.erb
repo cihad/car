@@ -1,69 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%= render 'breadcrumb' %>
 
-<p>
-  <strong>Brand:</strong>
-  <%= @model.brand %>
-</p>
+<div class="d-flex">
+  <h1><%= @model.name %></h1>
+  <%= link_to 'edit', [:edit, @brand, @model], class: "ml-3"  %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @model.name %>
-</p>
+  <% if @model.images.first %>
+    <div class="ml-auto" style="flex: 0 0 200px">
+      <%= image_tag url_for(@model.images.first), class: "w-100" %>
+    </div>
+  <% end %>
+</div>
 
-<p>
-  <strong>Fuel type:</strong>
-  <%= @model.fuel_type %>
-</p>
+<%= render "models/gallery" %>
 
-<p>
-  <strong>Engine size:</strong>
-  <%= @model.engine_size %>
-</p>
+<%= render "models/model_table", models: @model.children %>
 
-<p>
-  <strong>Power:</strong>
-  <%= @model.power %>
-</p>
-
-<p>
-  <strong>Power unit:</strong>
-  <%= @model.power_unit %>
-</p>
-
-<p>
-  <strong>Torque:</strong>
-  <%= @model.torque %>
-</p>
-
-<p>
-  <strong>Transmission:</strong>
-  <%= @model.transmission %>
-</p>
-
-<p>
-  <strong>Acceleration:</strong>
-  <%= @model.acceleration %>
-</p>
-
-<p>
-  <strong>Urban consumption:</strong>
-  <%= @model.urban_consumption %>
-</p>
-
-<p>
-  <strong>Extra urban consumption:</strong>
-  <%= @model.extra_urban_consumption %>
-</p>
-
-<p>
-  <strong>Combined consumption:</strong>
-  <%= @model.combined_consumption %>
-</p>
-
-<p>
-  <strong>Top speed:</strong>
-  <%= @model.top_speed %>
-</p>
-
-<%= link_to 'Edit', edit_brand_model_path(@brand, @model) %> |
-<%= link_to 'Back', brand_models_path(@brand) %>
+<%= render "models/info" %>

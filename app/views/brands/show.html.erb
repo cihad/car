@@ -1,18 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @brand.name %>
-</p>
+<%= content_for :breadcrumb do %>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Anasayfa", root_path %>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        <%= @brand.name %>
+      </li>
+    </ol>
+  </nav>
+<% end %>
 
-<p>
-  <strong>Logo:</strong>
-  <% if @brand.logo.attachment %>
-    <%= image_tag url_for(@brand.logo), width: 200 %>
+<div class="d-flex">
+  <div style="width: 100px; height: 100px; flex: 0 0 100px; order: 1; margin-left: auto">
+    <%= image_tag url_for(@brand.logo), alt: @brand.name, class: "w-100" %>
+  </div>
+  <h1><%= @brand.name %></h1>
+  <%= link_to "edit", [:edit, @brand], class: "ml-3" %>
+  <%= link_to "models", brand_models_path(@brand), class: "ml-3" %>
+</div>
+
+<div class="row">
+  <% @models.each do |model, sub_models| %>
+    <%= render "models/top_model_card", model: model %>
   <% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %> |
-<%= link_to 'Models', brand_models_path(@brand) %>
+</div>
