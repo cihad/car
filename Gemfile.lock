@@ -6,6 +6,13 @@ GIT
     sortable_tree_rails (0.0.9)
       rails (>= 4.2.7)
 
+GIT
+  remote: https://github.com/treenewbee/capistrano3-nginx.git
+  revision: 98fef61376a3a5097f4f23f54fab4e02cc97ef67
+  specs:
+    capistrano3-nginx (3.0.1)
+      capistrano (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,6 +59,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    airbrussh (1.3.0)
+      sshkit (>= 1.6.1, != 1.7.0)
     ancestry (3.0.2)
       activerecord (>= 3.2.0)
     archive-zip (0.11.0)
@@ -68,6 +77,26 @@ GEM
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.2)
+    capistrano (3.11.0)
+      airbrussh (>= 1.0.0)
+      i18n
+      rake (>= 10.0.0)
+      sshkit (>= 1.9.0)
+    capistrano-bundler (1.3.0)
+      capistrano (~> 3.1)
+      sshkit (~> 1.2)
+    capistrano-chruby (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.3)
+    capistrano-rails (1.4.0)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rails-db (0.0.2)
+      capistrano-rails (~> 1.1)
+    capistrano3-puma (3.1.1)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     capybara (3.8.1)
       addressable
       mini_mime (>= 0.1.3)
@@ -141,6 +170,9 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (5.0.2)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -215,6 +247,9 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sshkit (1.17.0)
+      net-scp (>= 1.1.2)
+      net-ssh (>= 2.8.0)
     temple (0.8.0)
     thor (0.20.0)
     thread_safe (0.3.6)
@@ -245,6 +280,12 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.3)
   byebug
+  capistrano (~> 3.10)
+  capistrano-chruby
+  capistrano-rails (~> 1.4)
+  capistrano-rails-db
+  capistrano3-nginx!
+  capistrano3-puma (~> 3.1)
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
