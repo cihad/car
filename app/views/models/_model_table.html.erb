@@ -1,0 +1,17 @@
+<% if !models.empty? %>
+  <div class="table-responsive">
+    <table class="table mt-5 table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <td>Brand</td>
+          <td>Name</td>
+          <td>Price</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= render partial: "models/tr_model", collection: models, as: :model %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

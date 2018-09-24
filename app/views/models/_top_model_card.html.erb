@@ -1,0 +1,16 @@
+<div class="col-4 mb-4">
+  <div class="card" style="height: 100%">
+    <% if model.images.first %>
+      <%= link_to [@brand, model] do %>
+        <%= image_tag url_for(model.images.first), class: "card-img-top"  %>
+      <% end %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title d-flex">
+        <%= link_to "#{@brand.name} #{model.name}", [@brand, model] %>
+
+        <%= link_to 'edit', [:edit, @brand, model], class: "ml-auto" %>
+      </h5>
+    </div>
+  </div>
+</div>

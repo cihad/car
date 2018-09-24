@@ -1,0 +1,21 @@
+<%= content_for :breadcrumb do %>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Anasayfa", root_path %>
+      </li>
+      <li class="breadcrumb-item active">
+        <%= link_to @brand.name, @brand %>
+      </li>
+      <% @model.ancestors.each do |model| %>
+        <li class="breadcrumb-item active">
+          <%= link_to model.name, [@brand, model] %>
+        </li>
+      <% end %>
+
+      <li class="breadcrumb-item active">
+        <%= @model.name %>
+      </li>
+    </ol>
+  </nav>
+<% end %>

@@ -17,6 +17,20 @@
   </div>
 
   <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+
+  <div class="field images d-flex">
+    <% model.images.each do |image| %>
+      <div id="<%= dom_id image %>" style="flex: 0 0 60px" class="mr-2">
+        <%= image_tag url_for(image.variant(resize: "60x60")), class: "img-thumbnail" %>
+        <%= link_to 'sil', image_path(image), remote: true, method: :delete %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="field">
     <%= form.label :fuel_type %>
     <%= form.text_field :fuel_type %>
   </div>
