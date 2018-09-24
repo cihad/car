@@ -1,74 +1,40 @@
 class PricesController < ApplicationController
+  before_action :set_brand
   before_action :set_price, only: [:show, :edit, :update, :destroy]
 
   # GET /prices
   # GET /prices.json
   def index
-    @prices = Price.all
-  end
-
-  # GET /prices/1
-  # GET /prices/1.json
-  def show
+    @models = @brand.models.arrange(order: :pos)
   end
 
   # GET /prices/new
   def new
-    @price = Price.new
-  end
-
-  # GET /prices/1/edit
-  def edit
+    @models = @brand.models.arrange(order: :pos)
   end
 
   # POST /prices
   # POST /prices.json
   def create
-    @price = Price.new(price_params)
-
-    respond_to do |format|
-      if @price.save
-        format.html { redirect_to @price, notice: 'Price was successfully created.' }
-        format.json { render :show, status: :created, location: @price }
-      else
-        format.html { render :new }
-        format.json { render json: @price.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /prices/1
-  # PATCH/PUT /prices/1.json
-  def update
-    respond_to do |format|
-      if @price.update(price_params)
-        format.html { redirect_to @price, notice: 'Price was successfully updated.' }
-        format.json { render :show, status: :ok, location: @price }
-      else
-        format.html { render :edit }
-        format.json { render json: @price.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /prices/1
-  # DELETE /prices/1.json
-  def destroy
-    @price.destroy
-    respond_to do |format|
-      format.html { redirect_to prices_url, notice: 'Price was successfully destroyed.' }
-      format.json { head :no_content }
+    if @brand.update(brand_params)
+      redirect_to new_brand_price_path(@brand), notice: 'Price was successfully created.'
+    else
+      render :new
     end
   end
 
   private
+
+    def set_brand
+      @brand = Brand.find_by!("lower(name) = ?", params[:brand_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_price
       @price = Price.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def price_params
-      params.require(:price).permit(:model_id, :price, :currency)
+    def brand_params
+      params.require(:brand).permit(models_attributes: [:id, prices_attributes: [:price, :currency]])
     end
 end

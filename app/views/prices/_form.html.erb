@@ -1,0 +1,12 @@
+<%= form_with model: @brand,
+              url: brand_prices_path(@brand),
+              local: true,
+              method: :post do |form| %>
+
+
+
+  <%= tree_render_nested_groups_form @models, form %>
+
+  <%= form.submit nil, class: "btn btn-primary" %>
+
+<% end %>
