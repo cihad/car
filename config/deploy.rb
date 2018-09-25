@@ -17,9 +17,6 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 set :chruby_ruby, "ruby-2.5.1"
 
 set :puma_conf, "#{shared_path}/config/puma.rb"
-set :nginx_ssl_certificate, "/etc/letsencrypt/live/teklifal.com/fullchain.pem"
-set :nginx_ssl_certificate_key, "/etc/letsencrypt/live/teklifal.com/privkey.pem"
-set :nginx_use_ssl, true
 
 set :app_server_socket, "#{shared_path}/tmp/sockets/#{fetch :application}.sock"
 
