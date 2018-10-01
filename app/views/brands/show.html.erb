@@ -20,7 +20,7 @@
   <h1><%= @brand.name %></h1>
   <%= link_to "edit", [:edit, @brand], class: "ml-3" %>
   <%= link_to "models", brand_models_path(@brand), class: "ml-3" %>
-  <%= link_to "new model", new_brand_model(@brand), class: "ml-3" %>
+  <%= link_to "new model", new_brand_model_path(@brand), class: "ml-3" %>
 </div>
 
 <div class="row">
